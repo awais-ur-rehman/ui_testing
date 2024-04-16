@@ -1,0 +1,21 @@
+Feature: Bynder Portal Login and Logout Functionalities
+
+  Background:
+    Given the user is on the Bynder login page
+
+  Scenario: Successful login and logout
+    When the user enters a valid username and password
+    And the user clicks the login button
+    Then the user should be redirected to the dashboard page
+    When the user clicks on the profile dropdown menu
+    And the user selects the logout button
+    Then the user should be redirected to the login page
+
+  Scenario: Unsuccessful login with incorrect credentials
+    When the user enters an incorrect username and password
+    And the user clicks the login button
+    Then a message of incorrect username or password should be displayed
+
+  Scenario: Password recovery
+    When the user clicks on the "Lost password?" link
+    Then the user should be redirected to the forgot password page
