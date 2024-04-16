@@ -22,6 +22,7 @@ describe('Bynder Portal Login and Logout Tests', () => {
         cy.get('input[name="username"]').type('nonexistinguser');
         cy.get('input[name="password"]').type('wrongpassword!');
         cy.get('button[type="submit"]').click();
+        cy.get('button[type="submit"]').click();
     });
 
     it('redirects to the forgot password page', () => {
